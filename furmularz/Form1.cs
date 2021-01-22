@@ -17,11 +17,6 @@ namespace furmularz
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             string imie = tbimie.Text;
@@ -30,9 +25,12 @@ namespace furmularz
             string wizerunek;
             string faktury;
             string info;
+            int prz = 0;
+
             if (checkBox1.Checked)
             {
-                dane = "przetwarzanie danych osobowych, ";
+                dane = "przetwarzanie danych osobowych";
+                prz++;
             }
             else
             {
@@ -41,7 +39,12 @@ namespace furmularz
 
             if(checkBox2.Checked)
             {
-                wizerunek = "wykorzystanie wizerunku, ";
+                if(prz > 0)
+                    wizerunek = ", wykorzystanie wizerunku";
+                else
+                    wizerunek = "wykorzystanie wizerunku";
+
+                prz++;
             }
             else
             {
@@ -50,7 +53,13 @@ namespace furmularz
 
             if(checkBox3.Checked)
             {
-                faktury = "wystawianie faktur bez opamiętania";
+                if (prz == 2)
+                    faktury = " oraz wystawianie faktur bez opamiętania";
+                else if (prz > 0)
+                    faktury = ", wystawianie faktur bez opamiętania";
+                else
+                    faktury = "wystawianie faktur bez opamiętania";
+                prz++;
             }
             else
             {
@@ -66,17 +75,36 @@ namespace furmularz
                 info = "radia";
             }
             else
-                info = "telewizji i  radia";
+                info = "telewizji i radia";
 
-            double granica; 
-            Double.TryParse(tbgranica.Text, out granica);
+            int granica; 
+            Int32.TryParse(tbgranica.Text, out granica);
 
-
-            MessageBox.Show(""+imie+" "+nazwisko+" wyraził(a) zgodę na " +
-                ""+dane+""+wizerunek+""+faktury+". Pozuskuje informacje z " +
-                ""+info+" oraz deklaruje opłatę w wysokości "+2*granica+" zł.   ");
+            if(prz == 0)
+            {
+                MessageBox.Show("" + imie + " " + nazwisko + " pozyskuje informacje z " +
+                "" + info + " oraz deklaruje opłatę w wysokości " + 2 * granica + " zł.");
+            }
+            else
+            {
+                MessageBox.Show("" + imie + " " + nazwisko + " wyraził(a) zgodę na " +
+               "" + dane + "" + wizerunek + "" + faktury + ". Pozyskuje informacje z " +
+               "" + info + " oraz deklaruje opłatę w wysokości " + 2 * granica + " zł.");
+            }
         }
 
-
+        private void tbgranica_TextChanged(object sender, EventArgs e)
+        {
+            if (tbgranica.Text.Length > 0)
+            {
+                char c = tbgranica.Text[tbgranica.Text.Length - 1];
+                int n = c;
+                if (n > 57 || n < 48)
+                {
+                    tbgranica.Text = tbgranica.Text.Substring(0, tbgranica.Text.Length - 1);
+                    tbgranica.SelectionStart = tbgranica.Text.Length;
+                }
+            }
+        }
     }
 }
