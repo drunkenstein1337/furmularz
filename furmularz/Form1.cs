@@ -29,6 +29,7 @@ namespace furmularz
             string dane;
             string wizerunek;
             string faktury;
+            string info;
             if (checkBox1.Checked)
             {
                 dane = "przetwarzanie danych osobowych, ";
@@ -55,12 +56,27 @@ namespace furmularz
             {
                 faktury = "";
             }
+
+            if (radioButton1.Checked)
+            {
+                info = "telewizji";
+            }
+            else if (radioButton2.Checked)
+            {
+                info = "radia";
+            }
+            else
+                info = "telewizji i  radia";
+
             double granica; 
             Double.TryParse(tbgranica.Text, out granica);
 
 
             MessageBox.Show(""+imie+" "+nazwisko+" wyraził(a) zgodę na " +
-                ""+dane+""+wizerunek+""+faktury+"    ");
+                ""+dane+""+wizerunek+""+faktury+". Pozuskuje informacje z " +
+                ""+info+" oraz deklaruje opłatę w wysokości "+2*granica+" zł.   ");
         }
+
+
     }
 }
