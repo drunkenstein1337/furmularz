@@ -1,0 +1,10 @@
+C:\Users\pawel\source\repos\furmularz\furmularz\bin\Debug\furmularz.exe.config
+C:\Users\pawel\source\repos\furmularz\furmularz\bin\Debug\furmularz.exe
+C:\Users\pawel\source\repos\furmularz\furmularz\bin\Debug\furmularz.pdb
+C:\Users\pawel\source\repos\furmularz\furmularz\obj\Debug\furmularz.csprojAssemblyReference.cache
+C:\Users\pawel\source\repos\furmularz\furmularz\obj\Debug\furmularz.Form1.resources
+C:\Users\pawel\source\repos\furmularz\furmularz\obj\Debug\furmularz.Properties.Resources.resources
+C:\Users\pawel\source\repos\furmularz\furmularz\obj\Debug\furmularz.csproj.GenerateResource.cache
+C:\Users\pawel\source\repos\furmularz\furmularz\obj\Debug\furmularz.csproj.CoreCompileInputs.cache
+C:\Users\pawel\source\repos\furmularz\furmularz\obj\Debug\furmularz.exe
+C:\Users\pawel\source\repos\furmularz\furmularz\obj\Debug\furmularz.pdb
